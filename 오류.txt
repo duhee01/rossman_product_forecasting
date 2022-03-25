@@ -1,0 +1,31 @@
+from sklearn.datasets import load_iris
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import seaborn as sns
+import matplotlib.pyplot as plt
+import scipy as sp
+import scipy.stats
+1. feature개수를 추가함. 1개에서->3개로
+2.날짜순서를 오름차순으로 다시 정정
+2013년 1월 1일부터 겹치는 날 없이 2015년 7월 31일까지 (대략 2년 단위임)
+
+batch_size를 노드개수와 비슷하도록 맞춤.
+batch_size는 예를들면 30개의 층이 있다면 그 층을 관리하는 사람을 batch_size로 생각하면 됨!
+
+
+
+1. 정규화할때 0 처리 어떻게하는지 알아보기.
+
+정규화 하는방법으로 
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+scaler.fit(Sales)
+Sales = scaler.transform(Sales)
+방법을 써서 판매량을 정규화 시킨후,
+한달기준으로 잡고 seq_len을 지저해서 결과값에 추가함.
+loss가 처음부터 0.025정도로 낮긴하지만 
+점점 낮아지면서 과적합이 되는것 같음.
+
+과적합 문제로 train test valid 설정을 다시 해야할 것 같음
+
+2.18 일은 metric 종류 공부하기
