@@ -1,4 +1,5 @@
 # rossman_product_forecasting
+##kaggle데이터를 이용한 판매량 예측
 ### 목적
 - LSTM을 이용한 판매량 예측 
 
